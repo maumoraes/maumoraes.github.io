@@ -22,24 +22,21 @@ const isSelected = (id) => {
   }
 }
 
-document.querySelector("#nome").addEventListener("blur", (e) => {
+document.getElementById("nome").addEventListener("blur", (e) => {
   isEmpty(e.target.value, "nome")
 })
 
-document.querySelector("#email").addEventListener("blur", (e) => {
+document.getElementById("email").addEventListener("blur", (e) => {
   isEmpty(e.target.value, "email")
 })
 
-document.querySelector("#telefone").addEventListener("blur", (e) => {
+document.getElementById("telefone").addEventListener("blur", (e) => {
   isEmpty(e.target.value, "telefone")
 })
 
-document.querySelector("#aceito").addEventListener("change", (e) => {
+document.getElementById("aceito").addEventListener("change", (e) => {
   isSelected("aceito");
 })
-
-console.log(document.querySelector("#nome"))
-
 var form = document.getElementById('form_contato');
 
 form.addEventListener('submit', function(event) {
