@@ -7,35 +7,35 @@
 
 let selected = false;
 
-const isEmpty = (value) => {
+const isEmpty = (value, id) => {
   if (value) {
-    ga('send', 'event', 'contato', id.slice(1), 'preencheu')
+    ga('send', 'event', 'contato', id, 'preencheu')
   }
 }
 
 const isSelected = (id) => {
   if (!selected) {
     selected = true;
-    ga('send', 'event', 'contato', id.slice(1), 'preencheu')
+    ga('send', 'event', 'contato', id, 'preencheu')
   } else {
     selected = false;
   }
 }
 
 document.querySelector("#nome").addEventListener("blur", (e) => {
-  isEmpty(e.target.value)
+  isEmpty(e.target.value, "nome")
 })
 
 document.querySelector("#email").addEventListener("blur", (e) => {
-  isEmpty(e.target.value)
+  isEmpty(e.target.value, "email")
 })
 
 document.querySelector("#telefone").addEventListener("blur", (e) => {
-  isEmpty(e.target.value)
+  isEmpty(e.target.value, "telefone")
 })
 
 document.querySelector("#aceito").addEventListener("change", (e) => {
-  isSelected("#aceito");
+  isSelected("aceito");
 })
 
 console.log(document.querySelector("#nome"))
